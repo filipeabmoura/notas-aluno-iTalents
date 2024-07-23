@@ -100,14 +100,14 @@ function main(){
     listaMaterias.forEach(materia => {
         console.log(`Matéria: ${materia.nome}`);
         console.log(`Notas: ${materia.notas[0]} - ${materia.notas[1]} - ${materia.notas[2]}`);
-        console.log(`Média Final: ${materia.mediaFinal}`);
+        console.log(`Média Final: ${materia.mediaFinal.toFixed(2)}`);
         console.log(`Número de Faltas: ${materia.numeroDeFaltas}`);
         console.log(`Status: ${verificaStatusDeAprovacao(materia)}\n\n`);
 
         mediaFinalGeral += materia.mediaFinal;
     });
 
-    console.log(`Média Final Geral (CR): ${(mediaFinalGeral/listaMaterias.length).toFixed(2)}`);
+    console.log(`Média Final Geral (CR): ${(mediaFinalGeral/listaMaterias.length).toFixed(2)}`); //to fixed não está funcionando
 }
 
 main();
